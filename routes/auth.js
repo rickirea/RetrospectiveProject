@@ -1,11 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const postit = require('../models/portit');
-const passport = require('passport');
-const passportFacebook = require('../helpers/facebook');
-const hbs          = require('hbs');
 
-//midelwers
 
 function isLoggedIn(req,res,next){
     if(req.isAuthenticated()) return next();
@@ -35,7 +31,7 @@ Promise.all({stop,start,stay,domore,doless})
 })
 
 
-//ruts editpost
+//ruts newpost
 router.get('/newpost',isAdmin,(req,res)=>{
     res.render('passport/dashboard')
 
@@ -45,3 +41,4 @@ router.post('/newpost',(req,res)=>{
     postit.register(req.body)
 })
 
+//
