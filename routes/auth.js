@@ -12,18 +12,36 @@ function isLoggedIn(req,res,next){
     return res.redirect('/login')
 }
 
+function isAdmin(req,res,next){
+    if(res,user.reole=="BOSS")res.redirect('/dashboard')
+    else next()
+}
+
 //ruts dashboard
 router.get('/dashboard',isLoggedIn,(req,res)=>{
-const stop= postit.fine({step:"stop"}).sort({updated_at:-1})
-const start= postit.fine({step:"start"}).sort({updated_at:-1})
-const stay= postit.fine({step:"stay"}).sort({updated_at:-1})
-const domore=postit.fine({step:"domore"}).sort({updated_at:-1})
-const doless=postit.fine({step:"doless"}).sort({updated_at:-1})
+const stop= postit.fine({stage:"stop"}).sort({updated_at:-1})
+const start= postit.fine({stage:"start"}).sort({updated_at:-1})
+const stay= postit.fine({stage:"stay"}).sort({updated_at:-1})
+const domore=postit.fine({stage:"domore"}).sort({updated_at:-1})
+const doless=postit.fine({stage:"doless"}).sort({updated_at:-1})
 Promise.all({stop,start,stay,domore,doless})
 .then(result=>{
     res.render("passport/dashboard",result)
 })
-.catch()
+.catch(e=>{
+    console.log("Eroor:",e)
+})
 
+})
+
+
+//ruts editpost
+router.get('/newpost',isAdmin,(req,res)=>{
+    res.render('passport/dashboard')
+
+})
+
+router.post('/newpost',(req,res)=>{
+    postit.register(req.body)
 })
 
