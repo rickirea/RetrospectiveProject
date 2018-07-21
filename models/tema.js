@@ -6,19 +6,11 @@ const temaSchema = new Schema({
         ref: 'modulo'
       },
     tema: String,
-    
+    //referenciaa modulo
   
 }, {
   timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
 });
 
-const Tema = mongoose.tema('Tema', temaSchema);
+const Tema = mongoose.model('Tema', temaSchema);
 module.exports = Tema;
-
-
-// // {
-//     type:String,
-//     enum:['JavaScript','Html','Css','DOM','Bootstrap','Jquery','Nodejs','MongoDb','Express','Mongoose','Passport',
-//   'API','Ajax','Json','Angular','Angular-Forms','Angular-Service','Angular-RestApi-Express','Angular-Recipes','Angular-Auth']
-    
-// },
