@@ -81,12 +81,52 @@ a {
     float: left; } }
 
 .board {
-  background-color: #DEE5E8; }
+  background-color: white;
+  padding: 2%;
+  margin-top: 5%; }
+
+.color {
+  background-color: #257ab9; }
 
 .margins {
   margin: 1%; }
 
 .postit {
-  background-color: #257ab9; }
+  background-color: #257ab9;
+  border-radius: 0px 10px 25px;
+  margin: 5%;
+  padding: 7%;
+  color: white;
+  font-size: .7em; }
+
+hr {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: .5px;
+  border-color: #257ab9; }
+
+hr-2 {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: .5px;
+  border-color: white; }
+
+.background {
+  background-image: url("https://pre00.deviantart.net/647c/th/pre/i/2015/010/0/3/chalkboard_texture_mc2015_by_mattiamc-d8dbnac.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 100vh;
+  padding: 3%; }
+
+h1, h4 {
+  color: white; }
 
 /*# sourceMappingURL=style.css.map */
