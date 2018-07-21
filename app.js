@@ -1,5 +1,5 @@
 require('dotenv').config();
-//richard in
+
 const bodyParser   = require('body-parser');
 const cookieParser = require('cookie-parser');
 const express      = require('express');
@@ -24,7 +24,11 @@ const flash         = require("connect-flash");
 
 mongoose.Promise = Promise;
 mongoose
+<<<<<<< HEAD
   .connect('mongodb://localhost/retrospective', {useMongoClient: true})
+=======
+  .connect('mongodb://bliss:abc123@ds145981.mlab.com:45981/retrospective', {useMongoClient: true})
+>>>>>>> 1edce26dded8b3f8a5a21e4a83f3454eec54016f
   .then(() => {
     console.log('Connected to Mongo!')
   }).catch(err => {
