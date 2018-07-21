@@ -30,7 +30,7 @@ const checkStudet = checkRoles('STUDENT');
 router.get('/', ensureLogin.ensureLoggedIn(), (req, res) => {
   if(req.user.role === 'BOSS')
   {
-    res.render('passport/index');
+    res.render('passport/dashboard');
     // User.find()
     // .then(users => {
     //   console.log(users)
@@ -74,7 +74,7 @@ router.get('/', ensureLogin.ensureLoggedIn(), (req, res) => {
 
   if(req.user.role === 'STUDENT' && req.user.curso != 'NONE')
   {
-    res.render('passport/index');
+    res.render('passport/dashboard');
     // User.find({role: {$eq: 'STUDENT'}})
     // .then(users => {
     //   console.log(users)
