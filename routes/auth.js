@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const postit = require('../models/portit');
+const postit = require('../models/postit');
 
 
 function isLoggedIn(req,res,next){
@@ -9,7 +9,7 @@ function isLoggedIn(req,res,next){
 }
 
 function isAdmin(req,res,next){
-    if(res,user.reole=="BOSS")res.redirect('/dashboard')
+    if(res.user.reole=="BOSS")res.redirect('/dashboard')
     else next()
 }
 
@@ -39,6 +39,12 @@ router.get('/newpost',isAdmin,(req,res)=>{
 
 router.post('/newpost',(req,res)=>{
     postit.register(req.body)
+    rest.redirect('/newpost');
+
 })
 
-//
+//edir post
+
+router.get('/newpost',(req,res)=>{
+    
+})
