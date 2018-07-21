@@ -1,0 +1,40 @@
+<h1>Retrospective</h1>
+<h2>{{curso.modulo}}</h2>
+
+<form>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Email address</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Tema General</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>General</option>
+      {{#each modulo}} 
+        <option>{{modulo.temas}}</option>
+      {{/each}} 
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Tipo retro</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>stop doing</option>
+      <option>start doing</option>
+      <option>keep the same</option>
+      <option>do more of</option>
+      <option>do less of</option>
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Post it</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+</form>
+
+<button class="btn btn-primary" type="submit">Agregar</button>
+
+<a class="btn btn-primary" href="/dasboard/:id" role="button">Ir al tablero</a>
+
+
