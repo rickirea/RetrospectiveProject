@@ -3,7 +3,7 @@ const User = require("../models/user");
 const bcrypt         = require("bcrypt");
 const bcryptSalt     = 10;
 
-mongoose.connect(`mongodb://localhost/retrospective`);
+mongoose.connect(`mongodb://bliss:abc123@ds145981.mlab.com:45981/retrospective`);
 
 const salt     = bcrypt.genSaltSync(bcryptSalt);
 const hashPass = bcrypt.hashSync('admin', salt);
