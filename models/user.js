@@ -7,8 +7,13 @@ const userSchema = new Schema({
   facebookID: String,
   role: {
     type:String,
-    enum:['BOSS','DEVELOPER','TA','STUDENT'],
-    default:'DEVELOPER'
+    enum:['BOSS','STUDENT'],
+    default:'STUDENT'
+  },
+  curso: {
+    type: String,
+    enum:['Web Development Part-Time','Web Development Full-Time','NONE'],
+    default:'NONE'
   }
 }, {
   timestamps: { createdAt: "created_at", updatedAt: "updated_at" }

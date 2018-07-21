@@ -6,11 +6,20 @@
     <label for="role">Current Role</label><br>
     <input disabled type="text" value="{{user.role}}">
     <br><br>
-    <label for="role">New Role</label>
+    
+    {{!-- <label for="role">New Role</label>
     <select name="role">
       <option value="TA">TA</option>
       <option selected value="DEVELOPER">DEVELOPER</option>
+    </select> --}}
+
+    <label for="curso">Curso</label>
+    <select name="curso">
+      <option value="Web Development Part-Time">Web Development Part-Time</option>
+      <option value="Web Development Full-Time">Web Development Full-Time</option>
+      {{!-- <option value="" selected>NONE</option> --}}
     </select>
+
     <br><br>
     {{#if errorMessage}}
       <div class="error-message">{{ errorMessage }}</div>

@@ -30,36 +30,59 @@ const checkStudet = checkRoles('STUDENT');
 router.get('/', ensureLogin.ensureLoggedIn(), (req, res) => {
   if(req.user.role === 'BOSS')
   {
-    User.find()
-    .then(users => {
-      console.log(users)
-      res.render('passport/' + (req.user.role).toLowerCase(), { users });
-    })
-    .catch(error => {
-      console.log(error)
-    })
+    res.render('passport/index');
+    // User.find()
+    // .then(users => {
+    //   console.log(users)
+    //   res.render('passport/' + (req.user.role).toLowerCase(), { users });
+    // })
+    // .catch(error => {
+    //   console.log(error)
+    // })
   }
-  if(req.user.role === 'TA' || req.user.role === 'DEVELOPER')
+  // if(req.user.role === 'TA' || req.user.role === 'DEVELOPER')
+  // {
+  //   User.find()
+  //   .then(users => {
+  //     console.log(users)
+  //     res.render('passport/profiles', { users });
+  //   })
+  //   .catch(error => {
+  //     console.log(error)
+  //   })
+  // }
+  if(req.user.role === 'STUDENT' && req.user.curso === 'NONE')
   {
-    User.find()
-    .then(users => {
-      console.log(users)
-      res.render('passport/profiles', { users });
-    })
-    .catch(error => {
-      console.log(error)
-    })
-  }
-  if(req.user.role === 'STUDENT')
-  {
+    // User.find({role: {$eq: 'STUDENT'}})
+    // .then(users => {
+    //   console.log(users)
+    //   res.render('passport/profiles', { users });
+    // })
+    // .catch(error => {
+    //   console.log(error)
+    // })
+
     User.find({role: {$eq: 'STUDENT'}})
-    .then(users => {
-      console.log(users)
-      res.render('passport/profiles', { users });
+    .then(user => {
+      console.log(user)
+      res.redirect('/users/edit?user_id='+req.user._id);
     })
     .catch(error => {
       console.log(error)
     })
+  }
+
+  if(req.user.role === 'STUDENT' && req.user.curso != 'NONE')
+  {
+    res.render('passport/index');
+    // User.find({role: {$eq: 'STUDENT'}})
+    // .then(users => {
+    //   console.log(users)
+    //   res.render('passport/profiles', { users });
+    // })
+    // .catch(error => {
+    //   console.log(error)
+    // })
   }
 });
 
@@ -256,14 +279,14 @@ router.get("/courses/delete", checkTA, (req, res, next) =>{
   res.redirect('/tas');
 });
 
-router.get("/signup", checkBoss, (req, res, next) =>{
+router.get("/signup", (req, res, next) =>{
   res.render('passport/signup');
 });
 
 router.post("/signup", (req, res, next) =>{
   const username = req.body.username;
   const password = req.body.password;
-  const role     = req.body.role;
+  const curso     = req.body.curso;
 
   if (username === "" || password === "") {
     res.render("passport/signup", {
@@ -288,7 +311,7 @@ router.post("/signup", (req, res, next) =>{
     const newUser = User({
       username,
       password: hashPass,
-      role
+      curso
     });
 
     newUser.save((err) => {
@@ -418,7 +441,7 @@ router.get("/users/edit", (req, res, next) =>{
 });
 
 router.post('/users/edit', (req, res, next) =>{
-  const {username, role} = req.body;
+  const {username, curso} = req.body;
 
   if (username === "") {
     console.log("Error username");
@@ -426,7 +449,7 @@ router.post('/users/edit', (req, res, next) =>{
     return;
   }
 
-  User.update({_id: req.query.user_id},{$set: {username, role}})
+  User.update({_id: req.query.user_id},{$set: {username, curso}})
   .then(() =>{
     res.redirect('/');
   })
