@@ -53,6 +53,21 @@ a {
 
 .page-container {
   padding: 50px; }
+  #Titulo{
+    text-size: 2em;
+  }
+  #boton1{
+    margin-left: 1200px;
+    padding-right: 20px;
+  }
+  #boton{
+    padding-right: 20px;
+    text-align: center;
+  }
+  h1{
+    text-size: 2em;
+    text-align: center;
+  }
 
 .col-xs-15,
 .col-sm-15,
