@@ -11,7 +11,7 @@ const path         = require('path');
 const FbStrategy   = require('passport-facebook').Strategy;
 
 //for signup and login basic
-const bcrypt      = require('bcrypt');
+const bcrypt      = require('bcryptjs');
 const saltRounds  = 10;
 const session     = require("express-session");
 const MongoStore  = require("connect-mongo")(session);
@@ -24,7 +24,7 @@ const flash         = require("connect-flash");
 
 mongoose.Promise = Promise;
 mongoose
-  .connect('mongodb://localhost/lab-passsport-roles', {useMongoClient: true})
+  .connect('mongodb://bliss:abc123@ds145981.mlab.com:45981/retrospective', {useMongoClient: true})
   .then(() => {
     console.log('Connected to Mongo!')
   }).catch(err => {

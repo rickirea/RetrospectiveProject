@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "sudo nodemon ./bin/www",
-    "dev": "sudo DEBUG=starter-code:* nodemon ./bin/www"
+    "start": "nodemon ./bin/www",
+    "dev": " DEBUG=starter-code:* nodemon ./bin/www"
   },
   "dependencies": {
-    "bcrypt": "^3.0.0",
+    "bcryptjs": "^2.4.3",
     "body-parser": "~1.18.2",
     "connect-ensure-login": "^0.1.1",
     "connect-flash": "^0.1.1",
