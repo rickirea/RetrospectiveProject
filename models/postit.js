@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const postitSchema = new Schema ({
     userid: [{Type: Schema.Types.ObjectId,
-        ref: 'user'
+        //ref: 'user'
         }],
         //ref modulo
     moduloid:[{Type:  Schema.Types.ObjectId,
