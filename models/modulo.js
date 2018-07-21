@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema   = mongoose.Schema;
 
 const moduloSchema = new Schema({
-  modulo: String,
+  modulo: String, //uno 
   cursoid:{type:Schema.Types.ObjectId,
   ref: 'curso'
 },
