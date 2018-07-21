@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "sudo nodemon ./bin/www",
-    "dev": "sudo DEBUG=starter-code:* nodemon ./bin/www"
+    "start": "nodemon ./bin/www",
+    "dev": "DEBUG=starter-code:* nodemon ./bin/www"
   },
   "dependencies": {
     "bcrypt": "^3.0.0",
