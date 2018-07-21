@@ -11,7 +11,7 @@ const path         = require('path');
 const FbStrategy   = require('passport-facebook').Strategy;
 
 //for signup and login basic
-const bcrypt      = require('bcryptjs');
+const bcrypt      = require('bcrypt');
 const saltRounds  = 10;
 const session     = require("express-session");
 const MongoStore  = require("connect-mongo")(session);

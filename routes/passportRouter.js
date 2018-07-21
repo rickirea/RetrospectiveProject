@@ -4,7 +4,7 @@ const router         = express.Router();
 const User           = require("../models/user");
 const Course         = require("../models/course");
 // Bcrypt to encrypt passwords
-const bcrypt         = require("bcryptjs");
+const bcrypt         = require("bcrypt");
 const bcryptSalt     = 10;
 const ensureLogin   = require("connect-ensure-login");
 
