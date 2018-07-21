@@ -2,16 +2,13 @@ body {
   //padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
 a {
   color: #00B7FF;
 }
-
 #form {
   margin: 30px auto;
   width: 380px;
 }
-
 #form label {
   color: #666;
   display: inline-block;
@@ -19,7 +16,6 @@ a {
   text-align: center;
   width: 100%;
 }
-
 #form input,
 #form select,
 #form button {
@@ -29,7 +25,6 @@ a {
   padding: 4px;
   width: 100%;
 }
-
 #form button {
   background: #43a3e6;
   border: 1px solid #43a3e6;
@@ -41,16 +36,14 @@ a {
   padding: 8px 16px;
   text-decoration: none;
   text-transform: uppercase;
-  transition: .3s ease background;
+  transition: .3s ease;
   width: 100%;
 }
-
 #form button:hover {
   background: #fff;
   color: #43a3e6;
-  transition: .3s ease background;
+  transition: .3s ease;
 }
-
 .error-message {
   background: #F02B63;
   box-sizing: border-box;
@@ -59,11 +52,9 @@ a {
   padding: 20px;
   width: 100%;
 }
-
 .page-container{
   padding: 50px;
 }
-
 .col-xs-15,
 .col-sm-15,
 .col-md-15,
@@ -77,7 +68,6 @@ a {
   width: 18%;
   float: left;
 }
-
 @media (min-width: 768px)
 {
   .col-sm-15
@@ -102,15 +92,57 @@ a {
     float: left;
   }
 }
-
 .board {
-  background-color: #DEE5E8;
+  background-color:white;
+  padding: 2%;
+  margin-top: 5%;
 }
-
+.color{
+  background-color: #257ab9;
+}
 .margins{
   margin: 1%;
 }
-
 .postit {
-  background-color: #257ab9;
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp_ac07yMe2QM6R3TnBDLaALcd8IGcEusc3EvtczrSB7zXIAEi');
+  height: 100%;
+  margin: 5%;
+  padding: 7%;
+  color: black;
+  font-size: .7em;
+  font-family: Avenir;
+}
+hr { 
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: .5px;
+  border-color: #257ab9;
+} 
+hr-2 { 
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: .5px;
+  border-color:white;
+} 
+.background {
+  background-image: url('https://pre00.deviantart.net/647c/th/pre/i/2015/010/0/3/chalkboard_texture_mc2015_by_mattiamc-d8dbnac.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 100vh;
+  padding: 3%;
+}
+h1,h4{
+  color: white;
+}
+.blanco{
+  color: white;
+  font-family: Avenir;
 }
